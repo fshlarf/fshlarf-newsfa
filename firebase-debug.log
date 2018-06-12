@@ -1,0 +1,32 @@
+[debug] [2018-06-11T06:15:11.988Z] ----------------------------------------------------------------------
+[debug] [2018-06-11T06:15:11.992Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\faish\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-06-11T06:15:11.993Z] CLI Version:   3.18.6
+[debug] [2018-06-11T06:15:11.993Z] Platform:      win32
+[debug] [2018-06-11T06:15:11.993Z] Node Version:  v8.10.0
+[debug] [2018-06-11T06:15:11.994Z] Time:          Mon Jun 11 2018 13:15:11 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-11T06:15:11.994Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-06-11T06:15:12.018Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-06-11T06:15:12.021Z] > authorizing via signed-in user
+[debug] [2018-06-11T06:15:12.026Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/faiznews-a3a3e  
+  
+ Mon Jun 11 2018 13:15:12 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-11T06:15:19.517Z] <<< HTTP RESPONSE 200
+[debug] [2018-06-11T06:15:19.518Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/faiznews-a3a3e/tokens  
+  
+ Mon Jun 11 2018 13:15:19 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-11T06:15:26.695Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'faiznews-a3a3e'...
+[info] 
+[info] i  deploying hosting
+[info] i  hosting: preparing public directory for upload...
+[warn] !  Warning: Public directory does not contain index.html
+[debug] [2018-06-11T06:15:58.845Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/faiznews-a3a3e/uploads/-LEhTzRVzBWoP3zyzp9B?fileCount=19723&message=  
+  
+ Mon Jun 11 2018 13:15:58 GMT+0700 (SE Asia Standard Time)
+[debug] [2018-06-11T06:17:35.168Z] Error: write ECONNRESET
+    at _errnoException (util.js:1022:11)
+    at WriteWrap.afterWrite [as oncomplete] (net.js:880:14)
+[error] 
+[error] Error: Server Error. write ECONNRESET
