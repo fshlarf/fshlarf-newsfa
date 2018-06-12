@@ -96,7 +96,7 @@ export default {
     width: 30px;
 }
 .navbar {
-    background-color: grey
+    background-color:lightslategray;
     ;
 }
 
