@@ -36,29 +36,6 @@
                 </form>
             </div>
         </div>
-        
-        
-        
-        <!-- <div v-if="!$store.state.article.title" class="container">
-            <img class="img-nav" src="https://www.freeiconspng.com/uploads/rocket-png-22.png" alt="">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                 <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="dropdown-menu nav navbar-nav">
-                <li class="active">
-                    <a class="nav-link" href="#" @click="goBack()">Technology <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                     <a class="nav-link" href="#" @click="openEntertain()">Entertainment</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" @click="openAbout()">About</a>
-                </li>
-            </ul>
-            </div>
-        </div> -->
       
         <div v-else class="container">
             <a class="navbar-brand" href="#" @click="goBack()">
