@@ -14,7 +14,7 @@
             <form action="#">
                 <label for="search">
                     <input type="text" placeholder="Search" @blur="state='close'"/>
-                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <img src="https://webiconspng.com/wp-content/uploads/2016/12/Search-Icon-File.png" alt="search img" style="width: 18px; margin-left: -25px;">
                 </label>
              </form>
         </div>
@@ -215,7 +215,7 @@ label{
   background-color: #fff;
   padding: 5px 12px;
   transition: all 1s ease;
-  border-radius: 0;
+  border-radius: 25px;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
   &::after{
     content: '';
