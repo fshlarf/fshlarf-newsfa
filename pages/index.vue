@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-5">
+  <div class="mt-4">
     <div class="container">
       <div class="card-columns">
         <div class="card" v-for="item in posts" v-bind:key="item.key" @click="openDetail(item)">  
@@ -66,6 +66,7 @@ export default {
 @media (min-width: 768px) {  
   .card-columns {column-count: 3;}
 }
+
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
  .card-columns {column-count: 3;}
@@ -75,4 +76,15 @@ export default {
 @media (min-width: 1200px) {  
    .card-columns {column-count: 3;} 
 }
+
+@media (max-width: 768px) {  
+  .card {
+    width: 110%;
+    margin-left: -16px;
+    margin-left: -16px;
+  }
+}
+
+
+
 </style>
