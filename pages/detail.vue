@@ -1,18 +1,20 @@
 
 <template>
-  <div class="mt-5">
+  <div class="mt-4">
     <div class="container">
       <div class="row justify-content-md-center">
-        <div class="card col-md-6">
-            <img :src="article.urlToImage" alt="Card image cap" class="img-fluid">
-            
-            <p class="card-text"><small class="text-muted">{{ article.publishedAt }} - {{ article.author }} - {{ article.source.name }}</small></p>
-            <h5 class="card-title">{{ article.title }}</h5>
-            <p class="card-text">{{ article.description }}</p>
-            <p>
-                sumber:
-                <a href="">{{ article.url }}</a>
-            </p>
+        <div class="card">
+            <img :src="article.urlToImage" alt="Card image cap" class="card-img-top img-fluid">
+            <div class="card-body">
+                <p class="card-text"><small class="text-muted">{{ article.publishedAt }} - {{ article.author }} - {{ article.source.name }}</small></p>
+                <h5 class="card-title">{{ article.title }}</h5>
+                <p class="card-text">{{ article.description }}</p>
+                <p>
+                    sumber:
+                    <a href="">{{ article.url }}</a>
+                </p>
+            </div>
+        
         </div>
       </div>
     </div>
@@ -32,6 +34,10 @@ export default {
 </script>
 
 <style>
+
+.card {
+    width: 600px;
+}
 
 .img-fluid {
     object-fit: cover;

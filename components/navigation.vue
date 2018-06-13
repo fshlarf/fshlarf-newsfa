@@ -43,7 +43,7 @@
       
         <div v-else class="container">
             <a class="navbar-brand" href="#" @click="goBack()">
-            <span class="ion-android-arrow-back" style="color:white"></span>
+                <span class="ion-android-arrow-back" style="color:white; font-size: 20px;"> Back</span>
             </a>
         </div>
     </nav>
