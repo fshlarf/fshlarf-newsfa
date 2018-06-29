@@ -1,6 +1,7 @@
-# projek_nuxt1
+# newsfa
 
-> Nuxt.js project
+> Website news & information by using Nuxt.js (Vue.js)
+You can test this project in newsfa.herokuapp.com (free hosting by heroku)
 
 ## Build Setup
 
