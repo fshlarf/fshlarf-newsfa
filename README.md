@@ -1,7 +1,7 @@
-# newsfa
+# newsfa (newsfa.herokuapp.com)
 
-> Website news & information by using Nuxt.js (Vue.js)
-You can test this project in newsfa.herokuapp.com (free hosting by heroku)
+> News & information web by using Nuxt.js (Vue.js). 
+You can test this project in newsfa.herokuapp.com (free hosting by heroku).
 
 ## Build Setup
 
