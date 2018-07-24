@@ -73,10 +73,10 @@ export default {
     cursor: pointer;
 }
 .nav-item:active {
-    background-color: rgba(0, 0, 0, 0.336);
+    background-color: rgba(255, 255, 255, 0.247);
 }
 .nav-item:visited {
-    background-color: rgba(0, 0, 0, 0.336);
+    background-color: rgba(255, 255, 255, 0.247);
 }
 
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");

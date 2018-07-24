@@ -10,7 +10,7 @@
           </div>
         </div>        
       </div>
-    <button class="btn btn-primary btn-more" @click="loadMore">Load More</button>
+    <button class="btn btn-dark btn-more btn-sm" @click="loadMore">Load More</button>
   </div>
 </template>
 
