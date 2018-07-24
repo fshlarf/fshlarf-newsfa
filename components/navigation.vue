@@ -1,48 +1,34 @@
-
 <template>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-padding navbar-expand-lg navbar-light">
         <div v-if="!$store.state.article.title" class="container">
-            <img class="img-nav" src="https://png.icons8.com/metro/1600/nfc-logo.png" alt="">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="coba" aria-controls="coba" aria-expanded="true" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" style="color: white" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" @click="openHome">Newsfa</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-navicon" style="color: white"></i>
             </button>
 
-            
-            <a class="nav-link tech" href="#" @click="goBack()">Technology <span class="sr-only">(current)</span></a>
-            <a class="nav-link entertain" href="#" @click="openEntertain()">Entertainment</a>
-            <a class="nav-link about" href="#" @click="openAbout()">About</a>
-            <form action="#">
-                <label for="search">
-                    <input type="text" placeholder="Search" @blur="state='close'"/>
-                    <img src="https://webiconspng.com/wp-content/uploads/2016/12/Search-Icon-File.png" alt="search img" style="width: 18px; margin-left: -25px;">
-                </label>
-             </form>
-        </div>
-        
-        
-        <!-- <div v-if="!$store.state.article.title" class="container">
-            <img class="img-nav" src="https://www.freeiconspng.com/uploads/rocket-png-22.png" alt="">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                 <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="dropdown-menu nav navbar-nav">
-                <li class="active">
-                    <a class="nav-link" href="#" @click="goBack()">Technology <span class="sr-only">(current)</span></a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <!-- Tech -->
+                    <a class="nav-link" style="color: white" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" @click="openHome">Technology </a>
                 </li>
                 <li class="nav-item">
-                     <a class="nav-link" href="#" @click="openEntertain()">Entertainment</a>
+                    <!-- Enter -->
+                    <a class="nav-link" style="color: white" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" @click="openEntertain">Entertainment</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" @click="openAbout()">About</a>
+                    <!-- About -->
+                    <a class="nav-link" style="color: white" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" @click="openAbout">About</a>
                 </li>
-            </ul>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" style="color: white">Search</button>
+                </form>
             </div>
-        </div> -->
-      
+        </div>
         <div v-else class="container">
-            <a class="navbar-brand" href="#" @click="goBack()">
+            <a class="navbar-brand" href="" @click="goBack()">
                 <span class="ion-android-arrow-back" style="color:white; font-size: 20px;"> Back</span>
             </a>
         </div>
@@ -51,17 +37,13 @@
 
 <script>
 export default {
-    // data (){
-    //     state : 'close'
-    // },
     state : {
         state : 'close'
     },
     methods : {
-        // state : "close",
-        // data: {
-        //     state : "close"
-        // },
+        openHome () {
+            this.$router.replace({'path':'/'})
+        },
         goBack () {
             this.$store.commit('setArticle', {})
             this.$router.replace({ 'path' : '/' })
@@ -71,135 +53,31 @@ export default {
         },
         openEntertain(){
             this.$router.replace({ 'path' : '/entertainment' })
-        },
-        // openSearch (){
-        //     this.state == 'open'
-        // }
-    },
+        }
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-.navbar-brand {
-  span {
-    font-size: 32px;
-    
-  }
-}
-
-.img-nav {
-    width: 20px;
-    margin-left: 10px;
-    margin-right: -50px;
-}
-
 .navbar {
     background-color: lightseagreen;
 }
-
 .nav-link {
     color: white;
     margin-left:0;
 }
-
-.nav-link.tech{
-    color: white;
-    text-align: left;
-    margin-left: -400px;
-    
-}
-
-.nav-link.entertain{
-    color: white;
-    text-align: left;
-    margin-left: -440px;
-    
-}
-
-.nav-link.about{
-    color: white;
-    text-align: left;
-    margin-left: -440px;
-    
-}
-
-
-
-@media (max-width: 768px) {  
-    .nav-link.tech{
-        color: white;
-        text-align: left;
-        margin-left: 0;
-        
-    }
-
-    .nav-link.entertain{
-        color: white;
-        text-align: left;
-        margin-left: 0;
-        
-    }
-
-    .nav-link.about{
-        color: white;
-        text-align: left;
-        margin-left: 0;
-        
-    }
-}
-/* Large devices (desktops, 992px and up) */
-@media (max-width: 992px) { 
-    .nav-link.tech{
-        color: white;
-        text-align: left;
-        margin-left: 0;
-        
-    }
-
-    .nav-link.entertain{
-        color: white;
-        text-align: left;
-        margin-left: 0;
-        
-    }
-
-    .nav-link.about{
-        color: white;
-        text-align: left;
-        margin-left: 0;
-        
-    }
-}
- 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (max-width: 1200px) {  
-    .nav-link.tech{
-        color: white;
-        text-align: left;
-        margin-left: 0;
-        
-    }
-
-    .nav-link.entertain{
-        color: white;
-        text-align: left;
-        margin-left: 0;
-        
-    }
-
-    .nav-link.about{
-        color: white;
-        text-align: left;
-        margin-left: 0;
-        
-    }
-}
-
 .navbar-toggler-icon {
     color:  white;
 }
-
-
+.nav-item {
+    cursor: pointer;
+}
+.nav-item:active {
+    background-color: rgba(0, 0, 0, 0.336);
+}
+.nav-item:visited {
+    background-color: rgba(0, 0, 0, 0.336);
+}
 
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
 body{
@@ -262,6 +140,4 @@ label{
     } 
   }
 }
-
-
 </style>

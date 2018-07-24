@@ -1,6 +1,5 @@
 <template>
-  <div class="mt-5">
-    <div class="container">
+  <div class="mt-3">
       <div class="card-columns">
         <div class="card" v-for="item in posts" v-bind:key="item.key" @click="openDetail(item)">  
           <img class="card-img-top" :src="item.urlToImage" alt="Not found image source">
@@ -11,7 +10,6 @@
           </div>
         </div>        
       </div>
-    </div>
     <button class="btn btn-primary btn-more" @click="loadMore">Load More</button>
   </div>
 </template>

@@ -1,14 +1,12 @@
 <template>
-    <div class="p-about">
+    <div>
         <p>
-            Website ini adalah projek yang dibuat Faishal Arif sebagai bahan belajar untuk mendalami Front End Developer.
+            This website is a prototype web by using Vue Js (Js framework for frontend development). Develop by Faishal Arif.
         </p>
     </div>
 </template>
 
 
 <style>
-.p-about {
-    margin-bottom: 500px;
-}
+
 </style>

@@ -1,9 +1,8 @@
 <template>
-  <div class="mt-4">
-    <div class="container">
+  <div class="mt-3">
       <div class="card-columns">
         <div class="card" v-for="item in posts" v-bind:key="item.key" @click="openDetail(item)">  
-          <img class="card-img-top" :src="item.urlToImage" alt="Not found image source">
+          <img v-show="item.urlToImage" class="card-img-top" :src="item.urlToImage" alt="Not found image source">
           <div class="card-body">
             <p class="card-text"><small class="text-muted">{{ item.author }} - {{ item.source.name }}</small></p>
             <h5 class="card-title" style="cursor: pointer; color: dodgerblue">{{ item.title }}</h5>
@@ -11,7 +10,6 @@
           </div>
         </div>        
       </div>
-    </div>
     <button class="btn btn-primary btn-more" @click="loadMore">Load More</button>
   </div>
 </template>
@@ -58,33 +56,16 @@ export default {
   margin: 20px auto;
   display: block;
 }
-/*
- * Card Columns Masonry - Bootstrap 4
- * https://codepen.io/JacobLett/pen/oZmWdd
- */
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+
 @media (min-width: 768px) {  
   .card-columns {column-count: 3;}
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
  .card-columns {column-count: 3;}
 }
- 
-/* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {  
    .card-columns {column-count: 3;} 
 }
-
-@media (max-width: 768px) {  
-  .card {
-    width: 110%;
-    margin-left: -16px;
-    margin-left: -16px;
-  }
-}
-
-
 
 </style>
