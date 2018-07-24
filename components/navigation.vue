@@ -60,7 +60,7 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-    background-color: lightseagreen;
+    background-color: black;
 }
 .nav-link {
     color: white;
