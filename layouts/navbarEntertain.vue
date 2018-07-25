@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Navigation -->
-    <Navigation/>
+    <NavigationEntertainment/>
     <!-- Content -->
     <div class="container content">
       <!-- Content -->
@@ -22,11 +22,11 @@
 </template>
 
 <script>
-import Navigation from '~/components/navigation.vue'
+import NavigationEntertainment from '~/components/NavigationEntertainment.vue'
 import Banner from '~/components/banner.vue'
 export default {
   components: {
-    Navigation,
+    NavigationEntertainment,
     Banner
   }
 }

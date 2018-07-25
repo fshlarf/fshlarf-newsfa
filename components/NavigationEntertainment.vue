@@ -27,11 +27,6 @@
                 </form>
             </div>
         </div>
-        <div v-else class="container">
-            <a class="navbar-brand" href="" @click="goBack()">
-                <span class="ion-android-arrow-back" style="color:white; font-size: 20px;"> Back</span>
-            </a>
-        </div>
     </nav>
 </template>
 
@@ -46,7 +41,7 @@ export default {
         },
         goBack () {
             this.$store.commit('setArticle', {})
-            this.$router.replace({ 'path' : '/' })
+            this.$router.replace({ 'path' : '/about' })
         },
         openAbout(){
             this.$router.replace({ 'path' : '/about' })

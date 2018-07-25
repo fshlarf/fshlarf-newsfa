@@ -5,18 +5,19 @@
           <img v-show="item.urlToImage" class="card-img-top" :src="item.urlToImage" alt="Not found image source">
           <div class="card-body">
             <p class="card-text"><small class="text-muted">{{ item.author }} - {{ item.source.name }}</small></p>
-            <h5 class="card-title" style="cursor: pointer; color: dodgerblue">{{ item.title }}</h5>
+            <h5 class="card-title" >{{ item.title }}</h5>
             <p class="card-text"><small class="text-muted">{{ item.publishedAt }}</small></p>
           </div>
         </div>        
       </div>
-    <button class="btn btn-dark btn-more btn-sm" @click="loadMore">Load More</button>
+    <button class="btn btn-dark btn-more" @click="loadMore">Load More</button>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
+  layout:'navbarEntertain',
   data () {
     return {
       allPost: [],
@@ -55,6 +56,13 @@ export default {
 .btn-more {
   margin: 20px auto;
   display: block;
+}
+.card-title {
+  color: dodgerblue;
+  cursor: pointer;
+}
+.card-title:active {
+  color: rgb(30, 173, 255);
 }
 
 @media (min-width: 768px) {  

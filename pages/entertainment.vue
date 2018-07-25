@@ -10,13 +10,14 @@
           </div>
         </div>        
       </div>
-    <button class="btn btn-primary btn-more" @click="loadMore">Load More</button>
+    <button class="btn btn-dark btn-more" @click="loadMore">Load More</button>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 export default {
+  layout: 'navbarEntertain',
   data () {
     return {
       allPost: [],
