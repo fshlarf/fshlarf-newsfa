@@ -24,11 +24,9 @@
 
 <script>
 import Navigation from '~/components/navigation.vue'
-import Banner from '~/components/banner.vue'
 export default {
   components: {
     Navigation,
-    Banner
   }
 }
 </script>

@@ -1,80 +1,72 @@
-module.exports = {
+export default {
+  mode: 'spa',
   /*
   ** Headers of the page
   */
   head: {
-    title: 'News Projek FA',
+    title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' },
-
-      // example vue-meta
-      { hid: 'title', name: 'title', content: 'Nuxt.js project' }
+      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.3/css/bootstrap.min.css' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' },
-      { rel: 'stylesheet', type: 'text/css', href: 'https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.css' },
-      { rel: 'stylesheet', type: 'text/css', href: 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' }
+      { rel: 'stylesheet', type: 'text/css', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' },
+      { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap' },
+    ],
+    script: [
+      { src: 'https://code.jquery.com/jquery-3.5.1.slim.min.js' },
+      { src: 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'},
+      { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js'}
     ]
   },
-   /*
-  ** Custom SCSS
+  /*
+  ** Customize the progress-bar color
+  */
+  loading: { color: '#fff' },
+  /*
+  ** Global CSS
   */
   css: [
-    { src: '~/assets/scss/main.scss', lang: 'scss' }
   ],
   /*
+  ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/swiper.js', ssr: false }
   ],
   /*
-  ** Customize the progress bar color
+  ** Nuxt.js dev-modules
   */
-  loading: { color: '#3B8070' },
+  buildModules: [
+  ],
+  router: { base: '/newsfa/' },
+  /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    // Doc: https://axios.nuxtjs.org/usage
+    '@nuxtjs/axios',
+  ],
+  /*
+  ** Axios module configuration
+  ** See https://axios.nuxtjs.org/options
+  */
+  axios: {
+  },
   /*
   ** Build configuration
   */
   build: {
     /*
-    ** Run ESLint on save
+    ** You can extend webpack config here
     */
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-
-        const vueLoader = config.module.rules.find(
-          ({loader}) => loader === 'vue-loader')
-        const { options: {loaders} } = vueLoader || { options: {} }
-        if (loaders) {
-          for (const loader of Object.values(loaders)) {
-            changeLoaderOptions(Array.isArray(loader) ? loader : [loader])
-          }
-        }
-        config.module.rules.forEach(rule => changeLoaderOptions(rule.use))
-        // console.log(util.inspect(config.module.rules, { depth: 6 }))
-      }
+    extend (config, ctx) {
     }
-  }
-}
+  },
+  css: [
+    {src: "~/assets/scss/main.scss", lang: 'scss' }
+  ]
 
-function changeLoaderOptions (loaders) {
-  if (loaders) {
-    for (const loader of loaders) {
-      if (loader.loader === 'sass-loader') {
-        Object.assign(loader.options, {
-          includePaths: ['./assets'],
-          // data: '@import "_imports";'
-        })
-      }
-    }
-  }
 }
